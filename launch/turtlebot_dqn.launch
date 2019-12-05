@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="motion_planing" type="turtlebot_dqn" name="turtlebot_dqn" output="screen" />
+  <node pkg="motion_planing" type="combination_obstacle_1" name="combination_obstacle_1" output="screen" />
+  <node pkg="motion_planing" type="combination_obstacle_2" name="combination_obstacle_2" output="screen" />
+</launch>

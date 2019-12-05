@@ -1,0 +1,23 @@
+# git clone https://bitbucket.org/theconstructcore/openai_ros.git
+
+# rosdep install openai_ros
+
+# sudo python setup.py install
+  running install
+  running build
+  running build_py
+  running install_lib
+  creating /usr/local/lib/python2.7/dist-packages/openai_ros
+  copying build/lib.linux-x86_64-2.7/openai_ros/__init__.py -> /usr/local/lib/python2.7/dist-packages/openai_ros
+  copying build/lib.linux-x86_64-2.7/openai_ros/robot_gazebo_env.py -> /usr/local/lib/python2.7/dist-packages/openai_ros
+  copying build/lib.linux-x86_64-2.7/openai_ros/robot_gazebo_env_goal.py -> /usr/local/lib/python2.7/dist-packages/openai_ros
+  copying build/lib.linux-x86_64-2.7/openai_ros/controllers_connection.py -> /usr/local/lib/python2.7/dist-packages/openai_ros
+  copying build/lib.linux-x86_64-2.7/openai_ros/gazebo_connection.py -> /usr/local/lib/python2.7/dist-packages/openai_ros
+  byte-compiling /usr/local/lib/python2.7/dist-packages/openai_ros/__init__.py to __init__.pyc
+  byte-compiling /usr/local/lib/python2.7/dist-packages/openai_ros/robot_gazebo_env.py to robot_gazebo_env.pyc
+  byte-compiling /usr/local/lib/python2.7/dist-packages/openai_ros/robot_gazebo_env_goal.py to robot_gazebo_env_goal.pyc
+  byte-compiling /usr/local/lib/python2.7/dist-packages/openai_ros/controllers_connection.py to controllers_connection.pyc
+  byte-compiling /usr/local/lib/python2.7/dist-packages/openai_ros/gazebo_connection.py to gazebo_connection.pyc
+  running install_egg_info
+  Writing /usr/local/lib/python2.7/dist-packages/openai_ros-1.0.0.egg-info
+  
