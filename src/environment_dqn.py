@@ -41,7 +41,7 @@ class Env():
         goal_angle = math.atan2(self.goal_y - self.position.y, self.goal_x - self.position.x)
 
         heading = goal_angle - yaw
-        if heading > pi:
+        if heading > pi: # horse blinders
             heading -= 2 * pi
 
         elif heading < -pi:
@@ -68,6 +68,7 @@ class Env():
         if min_range > min(scan_range) > 0:
             done = True
 
+        # WHEN YOU ARE NEAR GOAL
         current_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y),2)
         if current_distance < 0.2:
             self.get_goalbox = True
@@ -77,15 +78,20 @@ class Env():
     def setReward(self, state, done, action):
         yaw_reward = []
         obstacle_min_range = state[-2]
+        # obstacle_min_range = 3
         current_distance = state[-3]
+        # current_distance = 1.5
         heading = state[-4]
+        # heading = 2.5
 
         for i in range(5):
             angle = -pi / 4 + heading + (pi / 8 * i) + pi / 2
             tr = 1 - 4 * math.fabs(0.5 - math.modf(0.25 + 0.5 * angle % (2 * math.pi) / math.pi)[0])
+            # print(angle,tr)
             yaw_reward.append(tr)
 
         distance_rate = 2 ** (current_distance / self.goal_distance)
+        # distance_rate = 2 ** (current_distance / current_distance)
 
         if obstacle_min_range < 0.5:
             ob_reward = -5
