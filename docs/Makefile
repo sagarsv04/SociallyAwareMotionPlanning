@@ -35,13 +35,13 @@ version		:= 2.2.0
 .DEFAULT_GOAL	:= all
 # Note that the user-global version is imported *after* the source directory,
 # so that you can use stuff like ?= to get proper override behavior.
-.PHONY: Makefile GNUmakefile Makefile.ini $(HOME)/.docs/Makefile.ini
+.PHONY: Makefile GNUmakefile Makefile.ini $(HOME)/.latex-makefile/Makefile.ini
 -include Makefile.ini
--include $(HOME)/.docs/Makefile.ini
+-include $(HOME)/.latex-makefile/Makefile.ini
 # Better names for these things
-.PHONY: Variables.ini $(HOME)/.docs/Variables.ini
+.PHONY: Variables.ini $(HOME)/.latex-makefile/Variables.ini
 -include Variables.ini
--include $(HOME)/.docs/Variables.ini
+-include $(HOME)/.latex-makefile/Variables.ini
 #
 # This can be pdflatex or latex - you can change this by adding the following line to your Makefile.ini:
 # BUILD_STRATEGY := latex
@@ -288,7 +288,7 @@ export LC_ALL		?= C
 # Chris Monson (2010-03-09):
 # * Bumped version to 2.2.0-alpha1 - major change!
 # * Support pdflatex natively and by default (issue 6 - a long time coming)
-# * Add ability to have a single $HOME/.docs/Makefile.ini for
+# * Add ability to have a single $HOME/.latex-makefile/Makefile.ini for
 #     all invocations
 # * Reworked graphic inclusion detection so that extensions need not be
 #     specified for either build strategy (e.g.,
@@ -3896,8 +3896,9 @@ define output-dependency-graph
 	fi
 endef
 #
-.PHONY: Targets.ini $(HOME)/.docs/Targets.ini
+.PHONY: Targets.ini $(HOME)/.latex-makefile/Targets.ini
 -include Targets.ini
--include $(HOME)/.docs/Targets.ini
+-include $(HOME)/.latex-makefile/Targets.ini
 #
 # vim: noet sts=0 sw=8 ts=8
+

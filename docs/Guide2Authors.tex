@@ -79,16 +79,35 @@
   %% Words in title should begin with uppercase, except%%%
   %%% articles (and, the, a), conjunctions (and, for, nor, but),
   %%% prepositions (by, with, for, over, and so on)
-  \title{\emph{Style Guide for Submission of Manuscripts to}\\
-    \emph{Notre Dame Journal of Formal Logic}}
+  \title{\emph{Socially Aware Motion Planning}\\
+    \emph{CS580R - 12 November 2019}}
   %%% Choose a short title to be used as the running head on
   %%% odd-numbered pages%%%
   %%% Use this same title as "short title" when you submit MS to
   %%% EM%%%%
   \runtitle{NDJFL Style Guide}
 
-  \author{\fnms{Martha} %first name
-    \snm{Kummerer}%last name
+  \author{\fnms{Abhilasha} %first name
+    \snm{Jain,}%last name
+    \corref{}%to denote who is the corresponding author
+    \ead[label=e1]{ndjfl@nd.edu}%author email, leave this [label] as is
+    \ead[label=u1,url]{http://ndjfl.nd.edu/}%%web page, leave this [label] as is
+  }
+  %%% ADDRESS NOTES
+  %%% Dept listed first, University/company second, street or PO box
+  %%% third%%%
+  %%% U.S. Postal Service guidelines request no punctuation in the
+  %%% street...country lines%%%
+  %%% Country should be all uppercase%%%%
+  \address{Department of Leisure\\
+    University of the World\\
+    123 Paradise Lane\\
+    Lost Island LI 45678\\
+    THE CARIBBEAN\\
+    \printead{e1}\\
+    \printead{u1} }%
+   \author{\fnms{Sagar} %first name
+    \snm{Vishwakarma}%last name
     \corref{}%to denote who is the corresponding author
     \ead[label=e1]{ndjfl@nd.edu}%author email, leave this [label] as is
     \ead[label=u1,url]{http://ndjfl.nd.edu/}%%web page, leave this [label] as is
@@ -107,8 +126,8 @@
     \printead{e1}\\
     \printead{u1} }%
   \and%
-  \author{\fnms{Peter}
-    \snm{Cholak}\ead[label=e2]{cholak.1@nd.edu}}%increase label by
+  \author{\fnms{Devansh}
+    \snm{Das}\ead[label=e2]{cholak.1@nd.edu}}%increase label by
   %	% one for each
   %	% author
   \address{Department of Mathematics\\
@@ -124,61 +143,31 @@
 
 
 \begin{abstract}
-  This document and its \LaTeX\ source are meant as a guide to the
-  \emph{Notre Dame Journal of Formal Logic's (NDJFL)} style and the
-  style files \emph{ndjflart} and \emph{jflnat.bst}. The files will
-  explain the formatting of an article in ndjflart and will address
-  the style issues the \Jo\ prefers in the articles it publishes.  The
-  abstract should be a very brief summary of the article, that is, no
-  more than 150 words. It is lifted from the paper by indexing
-  services and therefore should not contain citations to works in the
-  \emph{References} nor should it contain author-created macros.
-  Limit maths and symbols to those that can be easily converted for
-  web reading.  The abstract should be in one block and not separated
-  into paragraphs.
+  Today, more and more mobile robots are coexisting with us in our daily lives.As  a  result,  the  behavior of  robots  that  share  space  with  humans  in  dynamicenvironments is a subject of intense investigation in robotics.  Robots must re-spect human social conventions,  guarantee the comfort of surrounding people,and maintain the legibility so that humans can understand the robot’s intentions.Robots that move in humans’ vicinity should navigate in a socially compliantway; this is called human-aware navigation.  These social behaviors are not easyto frame in mathematical expressions. Consequently, motion planners with pre-programmed constraints and hard-coded functions can fail in acquiring properbehaviors  related  to  human-awareness.   All  in  all,  it  is  easier  to  demonstratesocially  acceptable  behaviors  than  mathematically  defining  them.   Therefore,learning these social behaviors from data seems a more principled approach.This  thesis  aims  at  endowing  mobile  robots  with  new  social  skills  for  au-tonomous navigation in spaces populated with humans.  This work makes use oflearning from demonstration (LfD) approaches to solve the problem of human-aware navigation.  Different techniques and algorithms are explored and devel-oped to transfer social navigation behaviors to a robot by using demonstrationsof human experts performing the proposed tasks.
 \end{abstract}
-
-\begin{keyword}[class=AMS]
-  \kwd[Primary ]{X001} \kwd{Y002} \kwd[; Secondary ]{Z003}
-\end{keyword}
-
-\begin{keyword}
-  \kwd{typesetting} \kwd{guide for authors}
-\end{keyword}
 
 \end{frontmatter}
 
 % main matter with bibliography goes here
 
-\section{How Should You Use This Style Guide?}\label{intro}
-The \emph{Notre Dame Journal of Formal Logic} welcomes your
-submission.  We publish original and significant work in all areas of
-logic and the foundations of mathematics.  Your prepared manuscript
-will be submitted and processed through
-\href{http://www.editorialmanager.com/ndjfl}{Editorial Manager}.
-Throughout the review process you can log in at any time and follow
-the progress of your manuscript.
+\section{Creating the world}\label{intro}
+Relevant applications in robotics and computer vision require
+the ability to quickly acquire 3D models of the
+environment  A robot, for example, needs to know its location
+in the world to navigate between places. In out project we are creating
 
-This guide will cover the preparation of your manuscript and details
-on our particular style.  Our hope is that you will use this style
-guide to help you typeset your paper.  No matter which documentclass
-you use in composing your paper, you can easily convert it to ndjflart
-using the suggestions in the template.  Hopefully this guide will
-prove useful whether you are converting a finished document to use
-ndjflart.cls, are in the middle of writing the paper, or are just
-beginning.
-
-At the very least, this guide describes the \NDJFL\ style. We reserve
-the right to edit your paper so it conforms to our style. If you read
-this, you will not be surprised when you receive your page proofs.
+\subsection{A
+4x4 map}\label{fonts} with walls which the robot remembers and can move autonomously.Although a map is often provided, there can be frequent changes in the environment due to the presence of other mobile agents. For example, in office buildings, furniture is often shifted due to people’s daily activities. To navigate efficiently and safely in such environments, a robot needs to leverage the knowledge of the map to find good paths quickly, and to replan locally when changes are detected.
+\subsection{Moving and Static obstacles}\label{fonts} inside the map so the robot learns the idea of
+moving by being socially aware. Robots must sense the people and differentiate them from the rest of  obstacles in the scenario. Accurate detection and tracking of people are required. Our project currently fuse the data from different moving obstacles to estimate their position, orientation, and velocity.
 
 
 \begin{figure}
 \begin{center}
 \vspace{0.5em}
-    \includegraphics[width=8cm]{images/turtlebots}
+    \includegraphics[width=8cm]{images/worldimg}
     \vspace{-.5em}
-\caption{A description of my cool figure. }
+\caption{World with a 4x4 Map with moving obstacles}
 \label{fig:framework}
     \end{center}
 \end{figure}
